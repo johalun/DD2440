@@ -117,8 +117,8 @@ bool run(bool (*func)(int*), int *array, const char *n) {
 int main(int argc, char **argv) {
 
 	if(argc < 2) {
-		printf("Usage: 'main {0|1|2|3|4}' where,\n");
-		printf(" 0 to run 1-4\n");
+		printf("Usage: 'main {0|1|2|3|4|5}' where,\n");
+		printf(" 0 to run all functions\n");
 		printf(" 1 is lecture code (compare all elements)\n");
 		printf(" 2 is lecture code (compare 20 random elements)\n");
 		printf(" 3 is test code 1 (use system rand() but pre-generate random values)\n");
