@@ -23,3 +23,9 @@ johannes@jd:~/kth/dd2440/uniform-vs-no-majority % make run
 Result was 1 (print so that it is not optimized away)
 ```
 
+## Result
+
+In worst and best case we compare 1,000,000 vs 20 values. One might expect 50,000 times faster processing but this is not the case.  
+
+Even in best case, we only get ~7,000 times improvement. This is because comparing 20 values is so incredibly fast for the CPU that factors other than the comparison itself start to count.  
+
