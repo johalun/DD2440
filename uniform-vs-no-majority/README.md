@@ -3,7 +3,7 @@
 ## Short summarize
 
 ### Comparing 20 random values
-- By using pre-generated random numbers instead of calling rand() on every iteration we almost double the performance.
+- By using pre-generated random numbers instead of calling rand() on every iteration we almost double the performance. Why? Probably due to *cache locality*.
 
 ### Custom randomize algorithm
 - The builtin rand() is slow. By using a faster, less 'secure' algorithm we get almost 10x performance. 
