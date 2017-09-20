@@ -15,10 +15,11 @@
 
 ```shell
 johannes@jd:~/kth/dd2440/uniform-vs-no-majority % make run
-> lecture (all) example took 1033817 ns
+> lecture (n/2+1) example took 474239 ns
 > lecture (rand) example took 1341 ns
 > pre-generated random numbers example took 782 ns
 > optimized rand example took 133 ns
 > first 20 example took 65 ns
 Result was 1 (print so that it is not optimized away)
 ```
+

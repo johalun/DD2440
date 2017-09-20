@@ -30,7 +30,7 @@ unsigned int my_rand() {
 // Implementation as in lecture
 // Compare all elements
 bool lecture_all(int *array) {
-	for(int i=1; i<ARRAY_LEN; i++) {
+	for(int i=1; i<=ARRAY_LEN/2; i++) {
 		if(array[0] != array[i]) {
 			return false;
 		}
@@ -119,7 +119,7 @@ int main(int argc, char **argv) {
 	if(argc < 2) {
 		printf("Usage: 'main {0|1|2|3|4|5}' where,\n");
 		printf(" 0 to run all functions\n");
-		printf(" 1 is lecture code (compare all elements)\n");
+		printf(" 1 is lecture code (compare n/2+1 elements)\n");
 		printf(" 2 is lecture code (compare 20 random elements)\n");
 		printf(" 3 is test code 1 (use system rand() but pre-generate random values)\n");
 		printf(" 4 is test code 2 (use optimized rand() function)\n");
@@ -146,7 +146,7 @@ int main(int argc, char **argv) {
 		dobreak = false;
 	}
 	case 1: {
-		result = run(lecture_all, array, "lecture (all)");
+		result = run(lecture_all, array, "lecture (n/2+1)");
 		if(dobreak)
 			break;
 	}
