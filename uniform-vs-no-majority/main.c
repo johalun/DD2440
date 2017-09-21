@@ -7,6 +7,12 @@
 
 #define ARRAY_LEN 2000000
 
+#ifdef __APPLE__
+#define CLOCK CLOCK_MONOTONIC_RAW
+#else
+#define CLOCK CLOCK_MONOTONIC
+#endif
+
 // Optimized randomize function
 // (the built-in one is slow!)
 
@@ -104,9 +110,9 @@ bool first20(int *array) {
 bool run(bool (*func)(int*), int *array, const char *n) {
 	struct timespec start, end;
 	uint64_t ns;
-	clock_gettime(CLOCK_MONOTONIC_PRECISE, &start);
+	clock_gettime(CLOCK, &start);
 	int result = func(array);
-	clock_gettime(CLOCK_MONOTONIC_PRECISE, &end);
+	clock_gettime(CLOCK, &end);
 	ns = (end.tv_sec - start.tv_sec) * 1000000000 + (end.tv_nsec - start.tv_nsec);		
 	printf("> %s example took %lu ns\n", n, ns);
 	return result;
